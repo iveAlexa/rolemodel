@@ -20,9 +20,9 @@ public class Usuario {
     private LocalDateTime createAt;
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private usuarioDetalle usuarioDetalle;
+    private UsuarioDetalle usuarioDetalle;
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<usuarioRol> usuarioRols;
+    private Set<UsuarioRol> usuarioRols;
     public Usuario(String username, String password, String email, LocalDateTime createAt) {
         this.username = username;
         this.password = password;
@@ -74,19 +74,19 @@ public class Usuario {
         this.createAt = createAt;
     }
 
-    public com.project.rolmodel.domain.entities.usuarioDetalle getUsuarioDetalle() {
+    public com.project.rolmodel.domain.entities.UsuarioDetalle getUsuarioDetalle() {
         return usuarioDetalle;
     }
 
-    public void setUsuarioDetalle(com.project.rolmodel.domain.entities.usuarioDetalle usuarioDetalle) {
+    public void setUsuarioDetalle(UsuarioDetalle usuarioDetalle) {
         this.usuarioDetalle = usuarioDetalle;
     }
 
-    public Set<usuarioRol> getUsuarioRols() {
+    public Set<UsuarioRol> getUsuarioRols() {
         return usuarioRols;
     }
 
-    public void setUsuarioRols(Set<usuarioRol> usuarioRols) {
+    public void setUsuarioRols(Set<UsuarioRol> usuarioRols) {
         this.usuarioRols = usuarioRols;
     }
 }

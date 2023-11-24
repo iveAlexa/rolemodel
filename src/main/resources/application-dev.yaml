@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dev_rolemodel
+    username: postgres
+    password: password
+    dbcp2:
+      default-schema: public
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl: update
+  flyway:
+    locations: classpath:/db/migration, classpath:dev/db/migration
