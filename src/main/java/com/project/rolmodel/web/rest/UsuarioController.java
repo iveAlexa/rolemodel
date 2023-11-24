@@ -41,7 +41,7 @@ public class UsuarioController {
         }
         UsuarioDTO userDB = usuarioServiceImpl.save(dto);
 
-        return ResponseEntity.created(new URI("/v1/students/" + userDB.getId())).body(userDB);
+        return ResponseEntity.created(new URI("/usuarios" + userDB.getId())).body(userDB);
     }
 
    // @PostMapping(path = "/detalle")
