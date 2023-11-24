@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 @Entity
 @Table(name="usuario_rol")
-public class usuarioRol {
+public class UsuarioRol {
 
     @Id
     @SequenceGenerator(name="usuario_rol_sequence", allocationSize = 1)
@@ -19,9 +19,9 @@ public class usuarioRol {
     private Usuario usuario;
     @ManyToOne
     @JoinColumn(name="rol_id")
-    private rol rol;
+    private Rol rol;
 
-    public usuarioRol(Boolean active, LocalDateTime createdAt, Usuario usuario, com.project.rolmodel.domain.entities.rol rol) {
+    public UsuarioRol(Boolean active, LocalDateTime createdAt, Usuario usuario, com.project.rolmodel.domain.entities.Rol rol) {
         this.active = active;
         this.createdAt = createdAt;
         this.usuario = usuario;
@@ -60,15 +60,15 @@ public class usuarioRol {
         this.usuario = usuario;
     }
 
-    public com.project.rolmodel.domain.entities.rol getRol() {
+    public com.project.rolmodel.domain.entities.Rol getRol() {
         return rol;
     }
 
-    public void setRol(com.project.rolmodel.domain.entities.rol rol) {
+    public void setRol(com.project.rolmodel.domain.entities.Rol rol) {
         this.rol = rol;
     }
 
-    public usuarioRol() {
+    public UsuarioRol() {
 
     }
 }

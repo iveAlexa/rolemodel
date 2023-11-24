@@ -1,5 +1,6 @@
 package com.project.rolmodel.domain.entities;
 
+import com.project.rolmodel.dto.UsuarioDetalleDTO;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -7,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name= "usuario_detalle")
-public class usuarioDetalle {
+public class UsuarioDetalle {
 
     @Id
     @SequenceGenerator(name="usuario_detalle_sequence", allocationSize = 1)
@@ -24,7 +25,7 @@ public class usuarioDetalle {
     @JoinColumn(name="usuario_id")
     private Usuario usuario;
 
-    public usuarioDetalle(String firstname, String lastname, Integer age, LocalDate birthday, Usuario usuario) {
+    public UsuarioDetalle(String firstname, String lastname, Integer age, LocalDate birthday, Usuario usuario) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
@@ -32,8 +33,11 @@ public class usuarioDetalle {
         this.usuario = usuario;
     }
 
-    public usuarioDetalle() {
+    public UsuarioDetalle() {
 
+    }
+
+    public UsuarioDetalle(UsuarioDetalleDTO usuarioDetalleDTO, Usuario usuario) {
     }
 
     public Integer getId() {

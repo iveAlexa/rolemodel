@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="rol")
-public class rol {
+public class Rol {
 
     @Id
     @SequenceGenerator(name="rol_sequence", allocationSize =  1)
@@ -15,13 +15,13 @@ public class rol {
     private String name;
 
     @OneToMany(mappedBy = "rol")
-    private Set<usuarioRol> usuarioRols;
+    private Set<UsuarioRol> usuarioRols;
 
-    public rol(String name) {
+    public Rol(String name) {
         this.name = name;
     }
 
-    public rol() {
+    public Rol() {
 
     }
 
@@ -41,11 +41,11 @@ public class rol {
         this.name = name;
     }
 
-    public Set<usuarioRol> getUsuarioRols() {
+    public Set<UsuarioRol> getUsuarioRols() {
         return usuarioRols;
     }
 
-    public void setUsuarioRols(Set<usuarioRol> usuarioRols) {
+    public void setUsuarioRols(Set<UsuarioRol> usuarioRols) {
         this.usuarioRols = usuarioRols;
     }
 }
